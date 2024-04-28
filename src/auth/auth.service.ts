@@ -18,6 +18,7 @@ export class AuthService {
     const token = this.jwtService.signAsync({
       id: storedUser.id,
       email: storedUser.email,
+      password: storedUser.password,
     });
 
     return {
@@ -36,10 +37,21 @@ export class AuthService {
     const token = await this.jwtService.signAsync({
       id: user.id,
       email: user.email,
+      password: user.password,
     });
 
     return {
       access_token: token,
     };
+  }
+
+  async validateUser(payload: { id: number; email: string }): Promise<any> {
+    const user = await this.userService.get(payload.email);
+
+    if (user) {
+      return user;
+    }
+
+    return null;
   }
 }
