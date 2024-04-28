@@ -11,8 +11,8 @@ services:
   #     - db
   #   ports:
   #     - "3000:3000"
-  db:
-    container_name: db
+  db-vocab:
+    container_name: db-vocab
     image: postgres:16.2-alpine3.19
     volumes:
       - ./pgdata:/var/lib/postgresql/data

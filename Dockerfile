@@ -3,6 +3,7 @@ FROM node:lts-alpine3.19 as build
 WORKDIR /app
 
 COPY --chown=node:node package*.json ./
+COPY --chown=node:node prisma ./prisma/
 
 RUN npm ci --only=production
 
@@ -19,4 +20,4 @@ WORKDIR /app
 COPY --chown=node:node --from=build /app/dist /app/dist
 COPY --chown=node:node --from=build /app/node_modules /app/node_modules
 
-CMD ["node", "./dist/main.js"]
+CMD ["node", "./dist/main"]
