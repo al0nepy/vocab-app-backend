@@ -10,6 +10,7 @@ import configuration from './config/configuration';
 import HealthModule from './health/health.module';
 import { PrismaService } from './prisma/prisma.service';
 import { UserTopicsModule } from './user-topics/user-topics.module';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { UserTopicsModule } from './user-topics/user-topics.module';
       isGlobal: true,
       load: [configuration],
     }),
+    PrismaModule,
     HealthModule,
     AuthModule,
     UserModule,
