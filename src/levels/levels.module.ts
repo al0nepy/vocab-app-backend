@@ -7,5 +7,6 @@ import { LevelsController } from './levels.controller';
   imports: [PrismaModule],
   providers: [LevelsService],
   controllers: [LevelsController],
+  exports: [LevelsService],
 })
 export class LevelsModule {}
