@@ -7,5 +7,5 @@ export class UserDTO {
 
   email: string;
 
-  mainLanguage: Language;
+  language: Language;
 }
