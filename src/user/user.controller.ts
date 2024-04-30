@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post, Put, Req } from '@nestjs/common';
-import { FastifyRequest } from 'fastify';
+import { IRequest } from 'fastify';
 import { UserService } from './user.service';
 import { UserDTO } from './dto/user.dto';
 
@@ -8,7 +8,7 @@ export class UserController {
   constructor(private userService: UserService) {}
 
   @Get('/')
-  async getUser(@Req() req: FastifyRequest) {
+  async getUser(@Req() req: IRequest) {
     return this.userService.get(req.user.email);
   }
 
