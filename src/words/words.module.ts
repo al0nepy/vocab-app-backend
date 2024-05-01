@@ -7,5 +7,6 @@ import { WordsController } from './words.controller';
   imports: [PrismaModule],
   providers: [WordsService],
   controllers: [WordsController],
+  exports: [WordsService],
 })
 export class WordsModule {}

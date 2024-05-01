@@ -1,5 +1,5 @@
 import { Controller, Get, Req, Body, Post, Put } from '@nestjs/common';
-import { FastifyRequest } from 'fastify';
+import { IRequest } from 'fastify';
 import { UserTopicsService } from './user-topics.service';
 import { UserTopicDTO } from './dto/user.topic.dto';
 
@@ -8,7 +8,7 @@ export class UserTopicsController {
   constructor(private userTopicService: UserTopicsService) {}
 
   @Get('/')
-  async getAll(@Req() req: FastifyRequest) {
+  async getAll(@Req() req: IRequest) {
     const userId = req.user.id;
     return this.userTopicService.getAll(userId);
   }

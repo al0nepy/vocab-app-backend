@@ -7,5 +7,6 @@ import { UserProgressController } from './user-progress.controller';
   imports: [PrismaModule],
   providers: [UserProgressService],
   controllers: [UserProgressController],
+  exports: [UserProgressService],
 })
 export class UserProgressModule {}

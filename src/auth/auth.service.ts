@@ -15,7 +15,7 @@ export class AuthService {
     const user = userDTO;
     user.password = await argon2.hash(userDTO.password);
     const storedUser = await this.userService.create(user);
-    const token = this.jwtService.signAsync({
+    const token = await this.jwtService.signAsync({
       id: storedUser.id,
       email: storedUser.email,
       password: storedUser.password,

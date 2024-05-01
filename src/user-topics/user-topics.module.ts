@@ -7,5 +7,6 @@ import { UserTopicsController } from './user-topics.controller';
   imports: [PrismaModule],
   providers: [UserTopicsService],
   controllers: [UserTopicsController],
+  exports: [UserTopicsService],
 })
 export class UserTopicsModule {}
