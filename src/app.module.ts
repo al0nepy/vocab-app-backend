@@ -7,7 +7,6 @@ import { LevelsModule } from './levels/levels.module';
 import { TopicsModule } from './topics/topics.module';
 import HealthModule from './health/health.module';
 import { PrismaService } from './prisma/prisma.service';
-import { UserTopicsModule } from './user-topics/user-topics.module';
 import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
@@ -20,7 +19,6 @@ import { PrismaModule } from './prisma/prisma.module';
     WordsModule,
     LevelsModule,
     TopicsModule,
-    UserTopicsModule,
   ],
   controllers: [],
   providers: [PrismaService],

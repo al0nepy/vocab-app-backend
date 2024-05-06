@@ -5,5 +5,5 @@ export class UserProgressDTO {
 
   userId: number;
 
-  progress: number;
+  topicId: number;
 }

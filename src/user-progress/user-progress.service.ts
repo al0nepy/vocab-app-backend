@@ -19,14 +19,4 @@ export class UserProgressService {
       data: userProgress,
     });
   }
-
-  async update(userProgress: UserProgressDTO) {
-    return this.prisma.userProgress.update({
-      where: {
-        id: userProgress.id,
-        levelId: userProgress.levelId,
-      },
-      data: userProgress,
-    });
-  }
 }
